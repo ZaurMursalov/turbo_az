@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create cars table
+      author: Zaur Mursalov
+      changes:
+        - createTable:
+            tableName: cars
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: kind
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: year
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: amount
+                  type: bigint
+                  constraints:
+                    nullable: false
+            remarks: Table to store information about cars
