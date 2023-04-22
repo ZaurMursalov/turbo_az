@@ -1,7 +1,10 @@
 package com.example.msturboaz.exception;
 
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.crossstore.ChangeSetPersister;
-
+@RequiredArgsConstructor
+@Getter
 public class NotFoundException extends RuntimeException{
     private String code;
 

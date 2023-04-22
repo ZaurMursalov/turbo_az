@@ -18,6 +18,12 @@ public class ErrorHandler {
         log.info("Exception:",ex);
         return new ExceptionResponse(UNEXPECTED_EXCEPTION_CODE,UNEXPECTED_EXCEPTION_MESSAGE);
     }
+    @ExceptionHandler(NotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ExceptionResponse exceptionHandle(NotFoundException exception){
+        log.info("Not_Found_Exception:",exception);
+        return new ExceptionResponse(exception.getCode(),exception.getMessage());
+    }
 
 
 }
